@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro">
+
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su informacion personal" />
+
+    <LinearLayout
+        android:id="@+id/layoutRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitulo"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtTxTNombres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese sus nombres"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edtTxTApellidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese sus apellidos"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edtTxTCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su correo electronico"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/edtTxTCelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese sus telefono celular"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edtTxTCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su categoria favorita"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Usuario:" />
+
+        <EditText
+            android:id="@+id/edtTxtUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su nombre de usuario"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña:" />
+
+        <EditText
+            android:id="@+id/edtTxtPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su contraseña"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirme su contraseña:" />
+
+        <EditText
+            android:id="@+id/edtTxtConfirmacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Vuelva a ingresar su contraseña"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutRegistro"
+        android:layout_centerHorizontal="true"
+
+        android:text="Registro" />
+</RelativeLayout>
