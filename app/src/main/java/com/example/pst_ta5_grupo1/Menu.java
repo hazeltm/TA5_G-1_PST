@@ -32,8 +32,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnCategorias:
-                intent = new Intent(getApplicationContext(), Categorias.class);
-                startActivity(intent);
+                Toast.makeText(Menu.this, "No hay categorias", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnMenu:
                 Toast.makeText(Menu.this, "Ya se encuentra en el menu principal", Toast.LENGTH_SHORT).show();

@@ -14,13 +14,12 @@ public class Registro extends AppCompatActivity {
 
     private Button btnRegistro;
     private EditText edtTxTNombres, edtTxTApellidos, edtTxTCorreo, edtTxTCelular, edtTxTCategoria, edtTxtUsuario, edtTxtPassword, edtTxtConfirmacion;
-    private AdminSQLiteOpenHelper admin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        admin = new AdminSQLiteOpenHelper(this);
 
         btnRegistro = findViewById(R.id.btnRegistro);
         edtTxTNombres = findViewById(R.id.edtTxTNombres);
@@ -33,10 +32,12 @@ public class Registro extends AppCompatActivity {
         edtTxtConfirmacion = findViewById(R.id.edtTxtConfirmacion);
 
 
-
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(Registro.this);
+                SQLiteDatabase db = admin.getWritableDatabase();
+
                 String nombresTxt = edtTxTNombres.getText().toString();
                 String apellidosTxt = edtTxTApellidos.getText().toString();
                 String correoTxt = edtTxTCorreo.getText().toString();
@@ -54,14 +55,14 @@ public class Registro extends AppCompatActivity {
                     } else {
                         Boolean checkUsuario = admin.checkUsuario(usuarioTxt);
                         if (!checkUsuario) {
-                            Boolean insertData = admin.insertData(usuarioTxt, passwordTxt, nombresTxt, apellidosTxt, correoTxt, celularTxt, categoriaTxt);
-                            if (insertData) {
-                                Toast.makeText(Registro.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
-                                finish();
-                            } else {
-                                edtTxtUsuario.setText("");
-                                Toast.makeText(Registro.this, "Este usuario ya existe, intente con otro", Toast.LENGTH_SHORT).show();
-                            }
+                            db.execSQL("INSERT INTO clientes(usuario,password,nombres,apellidos,correo,celular,favorito) "
+                                    + "VALUES('" + usuarioTxt + "','" + passwordTxt + "','" + nombresTxt + "','" + apellidosTxt + "','" + correoTxt + "','" + celularTxt + "','" + categoriaTxt + "')");
+                            db.close();
+                            Toast.makeText(Registro.this, "Reigstro de usuario exitoso", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
+                            edtTxtUsuario.setText("");
+                            Toast.makeText(Registro.this, "Este usuario ya existe, intente con otro", Toast.LENGTH_SHORT).show();
                         }
                     }
 
