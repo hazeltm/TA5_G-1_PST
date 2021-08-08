@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PST_TA5_G1</string>
+    <string name="txtBusquedaHint">Búsqueda del Libro</string>
+    <string name="btnBuscar">Buscar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
