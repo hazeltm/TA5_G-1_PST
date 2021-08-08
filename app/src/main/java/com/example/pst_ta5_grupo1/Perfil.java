@@ -14,9 +14,8 @@ import android.widget.Toast;
 public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnCategorias, btnMenu, btnPerfil;
-    private TextView txtNombres, txtApellidos, txtCorreo, txtCelular, txtFavorito;
+    private TextView txtInformacion, txtUsuario;
     private String usuario;
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,38 +28,24 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
         btnCategorias.setOnClickListener(this);
         btnMenu.setOnClickListener(this);
         btnPerfil.setOnClickListener(this);
-        txtNombres = findViewById(R.id.txtNombres);
-        txtApellidos = findViewById(R.id.txtApellidos);
-        txtCorreo = findViewById(R.id.txtCorreo);
-        txtCelular = findViewById(R.id.txtCelular);
-        txtFavorito = findViewById(R.id.txtFavorito);
-
+        txtInformacion = findViewById(R.id.txtInformacion);
+        txtUsuario = findViewById(R.id.txtUsuario);
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
         SQLiteDatabase db = admin.getReadableDatabase();
         usuario = getIntent().getStringExtra("usuario");
-        if (!usuario.isEmpty()) {
-            try {
-                Cursor info = db.rawQuery("SELECT nombres FROM clientes WHERE usuario=laandrad", null);
-                System.out.println(info.toString());
-                StringBuffer buffer = new StringBuffer();
-                while (info.moveToNext()) {
-                    buffer.append("Usuario: " + info.getString(0) + "\n");
-                    buffer.append("Password: " + info.getString(1) + "\n");
-                    buffer.append("Nombre: " + info.getString(2) + "\n");
-                    buffer.append("Apellido: " + info.getString(3) + "\n");
-                    buffer.append("Correo: " + info.getString(4) + "\n");
-                    buffer.append("Celular: " + info.getString(5) + "\n");
-                    buffer.append("Favorito: " + info.getString(6) + "\n\n");
-                }
-                txtNombres.setText(buffer.toString());
-            } catch (Exception e) {
-                System.out.println(e.toString());
-            }
-            System.out.println("Display exitoso");
-        } else {
-            System.out.println("No ocurrio nada");
+        txtUsuario.setText(usuario);
+
+        Cursor info = db.rawQuery("SELECT * FROM clientes WHERE usuario='" + usuario + "'", null);
+        StringBuffer buffer = new StringBuffer();
+        while (info.moveToNext()) {
+            buffer.append("Nombre: " + info.getString(2) + "\n");
+            buffer.append("Apellido: " + info.getString(3) + "\n");
+            buffer.append("Correo: " + info.getString(4) + "\n");
+            buffer.append("Celular: " + info.getString(5) + "\n");
+            buffer.append("Favorito: " + info.getString(6) + "\n\n");
         }
+        txtInformacion.setText(buffer.toString());
         db.close();
     }
 
