@@ -10,24 +10,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btnCategorias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:drawableLeft="@drawable/book"
+            app:backgroundTint="#EF476F"
+            android:textColor="@android:color/white"
             android:text="Categorias" />
 
         <Button
             android:id="@+id/btnMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18dp"
+            app:backgroundTint="#FFD166"
+            android:drawableLeft="@drawable/book2"
+            android:textColor="@android:color/white"
             android:text="Menu" />
 
         <Button
             android:id="@+id/btnPerfil"
+            app:backgroundTint="#06D6A0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:drawableLeft="@drawable/account"
+            android:textColor="@android:color/white"
             android:text="Perfil" />
     </LinearLayout>
 </RelativeLayout>

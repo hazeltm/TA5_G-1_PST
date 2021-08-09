@@ -41,23 +41,15 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCategorias"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categorias" />
-
-        <Button
             android:id="@+id/btnMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Menu" />
+            android:textSize="18dp"
+            app:backgroundTint="#CA2E55"
+            android:drawableLeft="@drawable/back"
+            android:text="Regresar" />
 
-        <Button
-            android:id="@+id/btnPerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Perfil" />
     </LinearLayout>
 </RelativeLayout>

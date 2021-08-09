@@ -1,8 +1,6 @@
-package com.example.pst_ta5_g1;
+package com.example.pst_ta5_grupo1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,14 +15,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class HomeActivity extends AppCompatActivity {
 
-    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "dbLibros", null, 1);
+    com.example.pst_ta5_grupo1.AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
     private EditText edt;
     private TableLayout tb;
     int[] numLibrosImg = new int[]{R.drawable.fuimoscanciones,R.drawable.fuimoscanciones, R.drawable.mundodragones, R.drawable.lasombra, R.drawable.elcuento, R.drawable.cielo,

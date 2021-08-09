@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnCategorias, btnMenu, btnPerfil;
+    private Button btnMenu;
     private TextView txtInformacion, txtUsuario;
     private String usuario;
 
@@ -22,12 +22,8 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        btnCategorias = findViewById(R.id.btnCategorias);
         btnMenu = findViewById(R.id.btnMenu);
-        btnPerfil = findViewById(R.id.btnPerfil);
-        btnCategorias.setOnClickListener(this);
         btnMenu.setOnClickListener(this);
-        btnPerfil.setOnClickListener(this);
         txtInformacion = findViewById(R.id.txtInformacion);
         txtUsuario = findViewById(R.id.txtUsuario);
 
@@ -52,14 +48,8 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnCategorias:
-                Toast.makeText(Perfil.this, "No hay categorias", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.btnMenu:
                 finish();
-                break;
-            case R.id.btnPerfil:
-                Toast.makeText(Perfil.this, "Ya se encuentra en su perfil", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

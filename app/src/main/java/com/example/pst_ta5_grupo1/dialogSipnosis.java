@@ -1,4 +1,4 @@
-package com.example.pst_ta5_g1;
+package com.example.pst_ta5_grupo1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
