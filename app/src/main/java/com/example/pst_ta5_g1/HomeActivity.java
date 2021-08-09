@@ -27,8 +27,8 @@ public class HomeActivity extends AppCompatActivity {
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "dbLibros", null, 1);
     private EditText edt;
     private TableLayout tb;
-    int[] numLibrosImg = new int[]{R.drawable.fuimoscanciones, R.drawable.elcuento, R.drawable.lasombra, R.drawable.elcuento, R.drawable.elcuento,
-            R.drawable.cielo, R.drawable.dragonalia, R.drawable.gato, R.drawable.cabal};
+    int[] numLibrosImg = new int[]{R.drawable.fuimoscanciones,R.drawable.fuimoscanciones, R.drawable.mundodragones, R.drawable.lasombra, R.drawable.elcuento, R.drawable.cielo,
+            R.drawable.dragonalia, R.drawable.gato, R.drawable.cabal};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +76,8 @@ public class HomeActivity extends AppCompatActivity {
                 tv.setGravity(Gravity.RIGHT);
                 tv.setPadding(20,20,20,20);
                 tv.setTextSize(18);
-                tv.setBackgroundColor(Color.LTGRAY);
+                tv.setBackgroundColor(Color.parseColor("#faf0e6"));
+                tv.setTextColor(Color.BLACK);
                 tv.setCompoundDrawablesWithIntrinsicBounds(numLibrosImg[imagenPos], 0, 0, 0);
                 tv.setText(cad);
                 tr.addView(tv,tRowLayout);
@@ -128,7 +129,8 @@ public class HomeActivity extends AppCompatActivity {
                 tv.setGravity(Gravity.RIGHT);
                 tv.setPadding(20,20,20,20);
                 tv.setTextSize(18);
-                tv.setBackgroundColor(Color.LTGRAY);
+                tv.setBackgroundColor(Color.parseColor("#faf0e6"));
+                tv.setTextColor(Color.BLACK);
                 tv.setCompoundDrawablesWithIntrinsicBounds(numLibrosImg[imagenPos], 0, 0, 0);
                 tv.setText(cad);
                 tr.addView(tv,tRowLayout);
@@ -182,7 +184,8 @@ public class HomeActivity extends AppCompatActivity {
             tv.setGravity(Gravity.RIGHT);
             tv.setPadding(20,20,20,20);
             tv.setTextSize(18);
-            tv.setBackgroundColor(Color.LTGRAY);
+            tv.setBackgroundColor(Color.parseColor("#faf0e6"));
+            tv.setTextColor(Color.BLACK);
             tv.setCompoundDrawablesWithIntrinsicBounds(numLibrosImg[imagenPos], 0, 0, 0);
             tv.setText(cad);
             tr.addView(tv,tRowLayout);

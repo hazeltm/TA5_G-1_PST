@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PST_TA5_G1">
-        <activity android:name=".dialogSipnosis"> //El activity se muestra como un dialogo
-        </activity>
+        <activity android:name=".dialogSipnosis"/> //El activity se muestra como un dialogo
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
